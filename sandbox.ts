@@ -1,9 +1,21 @@
-const character = 'Rijal bin husen';
+let character = "Rijal"
+let age = 30;
+let isBlackBelt = false;
 
-console.log(character);
+// character = 20 //error, cant replace string with number
+character = "Bin husen";
 
-const inputs = document.querySelectorAll('input');
+// age = "rijal" //error, cant replace number with string
+age = 40;
 
-inputs.forEach(input => {
-  console.log(input);
-});
+// isBlackBelt = "yes" //error, cant replace boolean with string or number
+isBlackBelt = true
+
+// We just can replace the original variable with the same type
+
+// define the type of parameter
+const circ = (diameter: number) => {
+  return diameter * Math.PI
+}
+
+console.log(circ(7))

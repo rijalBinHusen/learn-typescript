@@ -1,30 +1,29 @@
-// arrays
-var names = ["Rijal", "Muhammad", "Abdulloh", "Umar", "Ali", "Usman"];
-//names = "" // error cant replace array with string
-names.push("Hamzah");
-// names.push(3) //error, you cant push number to array of string
-// names[0] = 3 //error, you cant push number to array of string
-var numbers = [1, 2, 3, 4, 5, 6];
-// numbers.push("Str")  //error, you cant push Strring to array of number
-// numbers[0] = "Str" //error, you cant push string to array of number
-// Mix array number and string
-var mixed = [1, 2, 3, "Rijal", "Str", "4", "sdk"];
-mixed.push("Husen");
-mixed.push(10);
-mixed[0] = "String";
-// Objects
-var group = {
-    name: "rijal",
-    age: 27,
-    isGood: true
-};
-group.age = 3;
-group.name = "Husen";
-// group.age = "123" //error, cant replace number with string
-// group.skill = ["Javascript", "HTML", "CSS"]// error, because skill doesnt exist
-// group = {
-//   name: "rijal",
-//   age: 27,
-//   isGood: true,
-//   skills: ["JS"] // error because skills doesnt exist on the original object
-// }
+var character;
+var age;
+var isLoggedIn;
+// age = "Rijal" //error
+age = 30;
+// isLoggedIn = 25
+isLoggedIn = false;
+//arrays
+var ninjas;
+var ninjas2 = [];
+// ninjas =  ["Rijal", "Bin", "Husen"]
+// ninjas.push("Rijal") //error
+ninjas2.push("Rijal"); //no error
+// union types
+var mixed = [];
+mixed.push("Hello");
+mixed.push(20);
+mixed.push(false);
+// console.log(mixed)
+var uid;
+uid = "123";
+uid = 123;
+//objects
+var ninjas3;
+ninjas3 = { name: "Rijal", age: 27 };
+ninjas3 = [];
+var ninjas4;
+// ninjas4 = {} //error
+ninjas4 = { name: "Rijal", age: 30, beltColor: "black" };

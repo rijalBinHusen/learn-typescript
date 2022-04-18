@@ -1,38 +1,43 @@
-// arrays
-let names = ["Rijal", "Muhammad", "Abdulloh", "Umar", "Ali", "Usman"]
+let character: string;
+let age: number;
+let isLoggedIn: Boolean;
 
-//names = "" // error cant replace array with string
+// age = "Rijal" //error
+age = 30
 
-names.push("Hamzah")
-// names.push(3) //error, you cant push number to array of string
-// names[0] = 3 //error, you cant push number to array of string
+// isLoggedIn = 25
+isLoggedIn = false
 
-let numbers = [1,2,3,4,5,6]
-// numbers.push("Str")  //error, you cant push Strring to array of number
-// numbers[0] = "Str" //error, you cant push string to array of number
+//arrays
+let ninjas: string[];
+let ninjas2: string[] = []
+// ninjas =  ["Rijal", "Bin", "Husen"]
+// ninjas.push("Rijal") //error
 
-// Mix array number and string
-let mixed = [1,2,3, "Rijal", "Str", "4", "sdk"]
+ninjas2.push("Rijal") //no error
 
-mixed.push("Husen")
-mixed.push(10)
-mixed[0] = "String"
+// union types
+let mixed: (string|number|boolean)[] = []
 
-// Objects
-let group = {
-  name: "rijal",
-  age: 27,
-  isGood: true,
-}
+mixed.push("Hello")
+mixed.push(20)
+mixed.push(false)
+// console.log(mixed)
 
-group.age = 3
-group.name = "Husen"
-// group.age = "123" //error, cant replace number with string
-// group.skill = ["Javascript", "HTML", "CSS"]// error, because skill doesnt exist
+let uid: string|number;
+uid = "123"
+uid = 123
 
-// group = {
-//   name: "rijal",
-//   age: 27,
-//   isGood: true,
-//   skills: ["JS"] // error because skills doesnt exist on the original object
-// }
+//objects
+let ninjas3: object;
+ninjas3 = { name: "Rijal", age: 27}
+ninjas3 = []
+
+let ninjas4: {
+  name: string,
+  age: number,
+  beltColor: string,
+};
+
+// ninjas4 = {} //error
+ninjas4 = {name: "Rijal", age: 30, beltColor: "black"}

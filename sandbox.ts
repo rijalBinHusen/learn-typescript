@@ -1,43 +1,24 @@
-let character: string;
-let age: number;
-let isLoggedIn: Boolean;
+let age: any = 25;
 
-// age = "Rijal" //error
-age = 30
+age = true
+console.log(age)
+age = "Hellow"
+console.log(age)
+age = {name: "Rijal"};
+console.log(age)
 
-// isLoggedIn = 25
-isLoggedIn = false
+//array
+let mixed: any[] = []
 
-//arrays
-let ninjas: string[];
-let ninjas2: string[] = []
-// ninjas =  ["Rijal", "Bin", "Husen"]
-// ninjas.push("Rijal") //error
+mixed.push(5)
+mixed.push("Rijal")
+mixed.push("false")
+console.log(mixed)
 
-ninjas2.push("Rijal") //no error
+let ninjas: { name: any, age: any};
 
-// union types
-let mixed: (string|number|boolean)[] = []
+ninjas = {name: "Rijal", age: 27 }
+console.log(ninjas)
 
-mixed.push("Hello")
-mixed.push(20)
-mixed.push(false)
-// console.log(mixed)
-
-let uid: string|number;
-uid = "123"
-uid = 123
-
-//objects
-let ninjas3: object;
-ninjas3 = { name: "Rijal", age: 27}
-ninjas3 = []
-
-let ninjas4: {
-  name: string,
-  age: number,
-  beltColor: string,
-};
-
-// ninjas4 = {} //error
-ninjas4 = {name: "Rijal", age: 30, beltColor: "black"}
+ninjas = {name: 27, age: "Rijal" }
+console.log(ninjas)

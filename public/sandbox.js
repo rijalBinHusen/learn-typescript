@@ -4,7 +4,8 @@ let greet;
 greet = () => {
     console.log("Hello again!");
 };
-const add = (a, b) => {
+const add = (a, b, c) => {
     console.log(a + b);
+    console.log(c);
 };
-add(3, 77);
+add(3, 77, "test");

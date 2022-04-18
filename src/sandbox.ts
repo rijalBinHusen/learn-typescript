@@ -1,3 +1,12 @@
-console.log("Test")
+let greet: Function;
 
-// lkasdoiweurou
+// greet = "HEllo"
+greet = () => {
+    console.log("Hello again!")
+}
+
+const add = (a: number, b: number) => {
+    console.log(a + b)
+}
+
+add(3, 77)

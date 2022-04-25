@@ -1,20 +1,10 @@
-let greet: Function;
+type StringOrNum = string | number;
+type ObjWithName = { name: string, uid: StringOrNum }
 
-// greet = "HEllo"
-greet = () => {
-    console.log("Hello again!")
+const logDetails = (uid: StringOrNum, item: string) => {
+    console.log(`${item} has a uid of ${uid}`)
 }
 
-const add = (a: number, b: number, c: number | string = 10) => {
-    console.log(a + b)
-    console.log(c)
+const greet = (user: { name: ObjWithName }) => {
+    console.log(`${user.name} says Hellow!`)
 }
-
-add(3, 77, 22)
-
-const minus = (a: number, b:number) => {
-    return a + b
-}
-
-let result = minus(10, 7)
-// result = "string" // error, because result type is number

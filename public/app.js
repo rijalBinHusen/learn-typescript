@@ -1,10 +1,22 @@
 "use strict";
-// const anchor = document.querySelector("a")!;
-// if(anchor) {
-//     console.log(anchor.href)
-// }
-// console.log(anchor.href)
-// const form = document.querySelector("form")!;
+// classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes ${amount} for ${this.details}`;
+    }
+}
+const invOne = new Invoice("Rijal", "Work on the Rijal website", 250);
+const invTwo = new Invoice("Husen", "Work on the Husen website", 300);
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+// const form = document.querySelewoctor("form")!;
 const form = document.querySelector(".new-item-form");
 // console.log(form.children)
 // inputs

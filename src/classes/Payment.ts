@@ -2,7 +2,7 @@ import { HasFormatter } from "../interfaces/HasFormatter.js"
 
 // classes
 
-export class Invoice implements HasFormatter {
+export class Payment implements HasFormatter {
     // readonly client: string; // you can only read this variable outside this class
     // private details: string; // you cant call this variable outside this class
     // public amount: number;
@@ -13,13 +13,13 @@ export class Invoice implements HasFormatter {
     //     this.amount = a;
     // }
     constructor(
-        readonly client: string, // you can only read this variable outside this class
+        readonly recipient: string, // you can only read this variable outside this class
         private details: string, // you cant call this variable outside this class
         public amount: number,
     ) {}
 
     format() {
-        return `${this.client} owes ${this.amount} for ${this.details}`;
+        return `${this.recipient} is owesd ${this.amount} for ${this.details}`;
     }
     
 }

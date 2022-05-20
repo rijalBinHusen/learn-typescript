@@ -1,20 +1,36 @@
-const me = {
-    name: "rijal",
-    age: 27,
-    speak(text) {
-        console.log(text);
-    },
-    spend(amount) {
-        console.log("I spend", amount);
-        return amount;
-    }
-};
-const somePerson = (person) => {
-    console.log("Hello, ", person.name);
-};
-somePerson(me);
-console.log(me);
+// interfaces
+// interface IsPerson {
+//     name: string,
+//     age:  number,
+//     speak(a: string): void;
+//     spend(a: number): number;
+// }
+// const me: IsPerson = {
+//     name: "rijal",
+//     age: 27,
+//     speak(text: string): void{
+//         console.log(text)
+//     },
+//     spend(amount: number): number{
+//         console.log("I spend", amount)
+//         return amount
+//     }
+// }
+// const somePerson = (person: IsPerson) => {
+//     console.log("Hello, ", person.name)
+// }
+// somePerson(me);
+// console.log(me)
+import { Payment } from "./classes/Payment.js";
 import { Invoice } from "./classes/Invoice.js";
+let docOne;
+let docTwo;
+docOne = new Invoice("Rijal", "web work", 250);
+docTwo = new Payment("Husen", "plumbing work", 200);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 const invOne = new Invoice("Rijal", "Work on the Rijal website", 250);
 const invTwo = new Invoice("Husen", "Work on the Husen website", 300);
 let invoices = [];

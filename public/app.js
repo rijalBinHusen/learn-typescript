@@ -26,6 +26,14 @@ const addUID = (obj) => {
     let uid = Math.floor(Math.random() * 100);
     return Object.assign(Object.assign({}, obj), { uid });
 };
-let docOne = addUID({ name: "rijal", age: 27 });
-console.log(docOne);
-console.log(docOne.name);
+const docThree = {
+    uid: 1,
+    resourceName: "people",
+    data: { name: "rijal" }
+};
+const docFour = {
+    uid: 2,
+    resourceName: "people2",
+    data: ["lorem", "ipsum", "dolor"]
+};
+console.log(docThree, docFour);

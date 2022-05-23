@@ -31,12 +31,35 @@ form.addEventListener("submit", (e: Event) => {
 
 // #GENERICS
 
-const addUID = <T>(obj: T) => {
+const addUID = <T extends {name: string}>(obj: T) => {
     let uid = Math.floor(Math.random() * 100)
     return { ...obj, uid}
 }
 
-let docOne = addUID({name: "rijal", age: 27})
+// let docOne = addUID({name: "rijal", age: 27})
+// let docTwo = addUID({name: "rijal2"})
 
-console.log(docOne)
-console.log(docOne.name)
+// console.log(docOne)
+// console.log(docTwo)
+
+//  with interface
+
+interface Resource <T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+
+const docThree: Resource <object> = {
+    uid: 1,
+    resourceName: "people",
+    data: { name: "rijal" }
+}
+
+const docFour: Resource <string[]> = {
+    uid:2,
+    resourceName: "people2",
+    data: ["lorem", "ipsum", "dolor"]
+}
+
+console.log(docThree, docFour);

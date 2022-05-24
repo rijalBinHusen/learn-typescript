@@ -18,54 +18,69 @@ const list = new ListsTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
     e.preventDefault();
 
+    let values: [string, string, number]
+    values = [tofrom.value, details.value, amount.valueAsNumber]
+
     let doc: HasFormatter;
     if(type.value === "invoice") {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber)
+        doc = new Invoice(...values)
     }
 
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber)
+        doc = new Payment(...values)
     }
     list.render(doc, type.value, 'end')
 })
 
-// #GENERICS
+// tuples
 
-// const addUID = <T extends {name: string}>(obj: T) => {
-//     let uid = Math.floor(Math.random() * 100)
-//     return { ...obj, uid}
+// let arr = ["Rijal", "Bin", "Husen"];
+// arr[0] = false
+// arr[1] = 123123
+// arr = [ 30, false, "Bang" ]
+
+let tup: [string, number, boolean] = ["Rijal", 27, true]
+tup[0] = "asdasd"
+tup[1] = 12312312
+tup[2] = false
+
+// // #GENERICS
+
+// // const addUID = <T extends {name: string}>(obj: T) => {
+// //     let uid = Math.floor(Math.random() * 100)
+// //     return { ...obj, uid}
+// // }
+
+// // let docOne = addUID({name: "rijal", age: 27})
+// // let docTwo = addUID({name: "rijal2"})
+
+// // console.log(docOne)
+// // console.log(docTwo)
+
+// //  with interface
+
+// interface Resource <T> {
+//     uid: number;
+//     resourceName: string;
+//     resourceType: ResourceType;
+//     data: T;
 // }
 
-// let docOne = addUID({name: "rijal", age: 27})
-// let docTwo = addUID({name: "rijal2"})
+// // enum
+// enum ResourceType {BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
 
-// console.log(docOne)
-// console.log(docTwo)
+// const docThree: Resource <object> = {
+//     uid: 1,
+//     resourceName: "people",
+//     resourceType: ResourceType.BOOK,
+//     data: { name: "rijal" }
+// }
 
-//  with interface
+// const docFour: Resource <string[]> = {
+//     uid:2,
+//     resourceType: ResourceType.PERSON,
+//     resourceName: "people2",
+//     data: ["lorem", "ipsum", "dolor"]
+// }
 
-interface Resource <T> {
-    uid: number;
-    resourceName: string;
-    resourceType: ResourceType;
-    data: T;
-}
-
-// enum
-enum ResourceType {BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
-
-const docThree: Resource <object> = {
-    uid: 1,
-    resourceName: "people",
-    resourceType: ResourceType.BOOK,
-    data: { name: "rijal" }
-}
-
-const docFour: Resource <string[]> = {
-    uid:2,
-    resourceType: ResourceType.PERSON,
-    resourceName: "people2",
-    data: ["lorem", "ipsum", "dolor"]
-}
-
-console.log(docThree, docFour);
+// console.log(docThree, docFour);
